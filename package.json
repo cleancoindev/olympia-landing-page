@@ -1,0 +1,27 @@
+{
+  "name": "olympia-landing-page",
+  "version": "1.0.0",
+  "description": "Olympia Tournament landing page",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnosis/olympia-landing-page.git"
+  },
+  "keywords": [
+    "Olympia",
+    "Gnosis"
+  ],
+  "author": "Gnosis Ltd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gnosis/olympia-landing-page/issues"
+  },
+  "homepage": "https://github.com/gnosis/olympia-landing-page#readme",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  }
+}
