@@ -4,8 +4,8 @@
   "description": "Olympia Tournament landing page",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server -p 5000"
+    "build": "parcel build --no-source-maps --experimental-scope-hoisting -o index index.html",
+    "dev": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,11 @@
     "url": "https://github.com/gnosis/olympia-landing-page/issues"
   },
   "homepage": "https://github.com/gnosis/olympia-landing-page#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.0",
+    "parcel-bundler": "^1.9.7"
+  },
   "dependencies": {
-    "http-server": "^0.10.0"
+    "fetch-jsonp": "^1.1.3"
   }
 }

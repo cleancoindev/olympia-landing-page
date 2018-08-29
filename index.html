@@ -1,291 +1,59 @@
 <html>
 
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" >
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Olympia - by Gnosis | Launching Soon</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-touch-fullscreen" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="icon" type="image/png" href="images/logo.png" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Olympia - by Gnosis | Launching Soon</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="icon" type="image/png" href="./images/logo.png" />
+  <link rel="stylesheet" href="./styles/style.css">
 
-<!-- Favicon -->
-<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+  <!-- Favicon -->
+  <!-- <link rel="shortcut icon" href="favicon.ico"> -->
 
-<!-- Apple Icon Set -->
-<!-- <link rel="apple-touch-icon" href="">
+  <!-- Apple Icon Set -->
+  <!-- <link rel="apple-touch-icon" href="">
 <link rel="apple-touch-icon" sizes="152x152" href="">
 <link rel="apple-touch-icon" sizes="180x180" href="">
 <link rel="icon" sizes="192x192" href=""> -->
 
 </head>
 
-<style>
-  @charset "UTF-8";
-
-@font-face {
-    font-family: Montserrat;
-    src: url("/fonts/Montserrat-Light.woff2") format("woff2");
-    font-weight: lighter;
-    font-style: normal
-}
-@font-face {
-    font-family: Montserrat;
-    src: url("/fonts/Montserrat-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal
-}
-@font-face {
-    font-family: Montserrat;
-    src: url("/fonts/Montserrat-Medium.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal
-}
-
-html {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  height: 100vh;
-  background: #00A5C5 url('images/bg.jpg') no-repeat center / cover;
-  color: #FFF;
-  font-family: Montserrat, sans-serif;
-  font-size: 12px;
-  line-height: 16px;
-  margin: 0;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-::-moz-selection {
-    color: #fff;
-    background: #0072cf
-}
-::selection {
-    color: #fff;
-    background: #0072cf
-}
-h1,
-h2,
-h3 {
-    color: #333;
-    font-family: inherit;
-    font-weight: 400;
-    margin: 0;
-    padding: 0
-}
-a:active,
-a:focus,
-a:link,
-a:visited {
-    text-decoration: underline;
-    color: #065869;
-}
-select {
-    font-family: inherit;
-    outline: 0
-}
-nav,
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0
-}
-img {
-    border: 0;
-    -ms-interpolation-mode: bicubic;
-    vertical-align: middle
-}
-
-#parent {
-width: 100%;
-    height: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    max-width: 525px;
-    max-height: 100%;
-    overflow: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    text-align: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    font-family: Montserrat, sans-serif;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-@media only screen and (max-width: 736px) {
- #parent {
-      position: relative;
-    left: initial;
-    right: initial;
-    top: initial;
-    max-width: 100%;
-    height: 100%;
-    bottom: initial;
-    display: block;
-    padding-bottom: 75px;
- }
-}
-
-.logo {
-  background: url('images/olympia_logo.svg') no-repeat 50% / contain;
-  display: block;
-  height: 100px;
-  width: 100%;
-  margin: 0 auto 75px;
-}
-@media only screen and (max-width: 736px) {
-  .logo {
-        height: 50px;
-    display: block;
-    margin: 50px auto;
-  }
-}
-
-.content {
-  font-family: inherit;
-  color: white;
-}
-
-.content p {
-  font-size: 1.3rem;
-  font-family: inherit;
-  color: inherit;
-  line-height: 2rem;
-  width: 100%;
-  margin: 40px auto;
-  display: block;
-}
-
-@media only screen and (max-width: 736px) {
-  .content p {
-    font-size: 1.3rem;
-    width: 80%;
-  }
-}
-
-.social ul {
-  display:  table;
-  margin:  0 auto;
-}
-
-.social ul li {
-      display: inline-block;
-      margin:  0 25px 0 0;
-}
-
-.social ul li:last-child {
-  margin:  0;
-}
-
-.social ul li img {
-  height:  30px;
-  width:  30px;
-  outline:  0;
-}
-
-h1 {
-      font-family: inherit;
-    font-size: 3.2rem;
-    width: 100%;
-    display: block;
-    line-height: 3rem;
-    color: #065869;
-    letter-spacing: 4px;
-      -webkit-transform: translatey(0);
-          -ms-transform: translatey(0);
-              transform: translatey(0);
-  -webkit-animation: float 4s ease-in-out infinite;
-          animation: float 4s ease-in-out infinite;
-}
-@media only screen and (max-width: 736px) {
-     h1 {
-    font-size: 2.6rem;
-    max-width: 95%;
-    margin: 0 auto;
-   }
-}
-
-h2 {
-      font-family: inherit;
-    text-transform: uppercase;
-    letter-spacing: 6px;
-    color: #065869;
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin:  0 auto 15px;
-}
-
-
-@-webkit-keyframes float {
-  0% {
-    -webkit-transform: translatey(0px);
-            transform: translatey(0px);
-  }
-  50% {
-    -webkit-transform: translatey(-5px);
-            transform: translatey(-5px);
-  }
-  100% {
-    -webkit-transform: translatey(0px);
-            transform: translatey(0px);
-  }
-}
-
-
-@keyframes float {
-  0% {
-    -webkit-transform: translatey(0px);
-            transform: translatey(0px);
-  }
-  50% {
-    -webkit-transform: translatey(-5px);
-            transform: translatey(-5px);
-  }
-  100% {
-    -webkit-transform: translatey(0px);
-            transform: translatey(0px);
-  }
-}
-</style>
-
 <body>
 
-<div id="parent">
-  <span class="logo"></span>
-  <span class="content">
-    <h1>STARTING SOON</h1>
-    <p>Once Gnosis Olympia starts, you'll be able to try out trading on prediction markets here. For latest updates, follow us on <a href="https://twitter.com/gnosispm" target="_blank">Twitter</a> and <a href="https://blog.gnosis.pm/" target="_blank">Medium</a>. <br><br><strong>Looking forward to seeing you in Olympia!</strong></p>
-  </span>
+  <div id="parent">
+    <span class="logo"></span>
+    <span class="content">
+      <h1>STARTING SOON</h1>
+      <p>Once Gnosis Olympia starts, you'll be able to try out trading on prediction markets here.</p>
+      <div class="signup-container">
+        <h3>Sign up to get notified about Olympia’s launch</h3>
+        <form id="subscribe-form" method="get" action="https://gnosis.us13.list-manage.com/subscribe/post-json?u=1a123436baa68728b8cfa3402&amp;id=3e480e888c">
+          <div class="submit-field">
+            <input class="input" type="email" name="EMAIL" id="emailAddress" placeholder="Email address" />
+            <button type="submit" id="signUpButton">Sign up</button>
+          </div>
+        </form>
+        <span id="subscribe-result"></span>
+      </div>
+    </span>
 
-  <span class="social">
-    <h2>Follow Us On</h2>
-    <ul>
-      <li><a href="https://twitter.com/gnosispm" target="_blank"><img src="images/twitter.svg" alt="Twitter"></a></li>
-      <li><a href="https://blog.gnosis.pm/" target="_blank"><img src="images/medium.svg" alt="Medium"></a></li>
-      <li><a href="https://www.reddit.com/r/gnosisPM/" target="_blank"><img src="images/reddit.svg" alt="Reddit"></a></li>
-    </ul>
-  </span>
-</div>
+    <span class="social">
+      <h2>Follow Us On</h2>
+      <ul>
+        <li><a href="https://twitter.com/gnosispm" target="_blank"><img src="images/twitter.svg" alt="Twitter"></a></li>
+        <li><a href="https://blog.gnosis.pm/" target="_blank"><img src="images/medium.svg" alt="Medium"></a></li>
+        <li><a href="https://www.reddit.com/r/gnosisPM/" target="_blank"><img src="images/reddit.svg" alt="Reddit"></a></li>
+      </ul>
+    </span>
+    <a href="./assets/PrivacyPolicy.html" class="privacy-policy-link">Privacy Policy</a>
+  </div>
 
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="./js/form.js"></script>
 </body>
 
 </html>
