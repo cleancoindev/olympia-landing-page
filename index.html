@@ -31,12 +31,13 @@
       <p>Once Gnosis Olympia starts, you'll be able to try out trading on prediction markets here.</p>
       <div class="signup-container">
         <h3>Sign up to get notified about Olympia’s launch</h3>
-        <form onsubmit="return subscribe()">
+        <form id="subscribe-form" method="get" action="https://gnosis.us13.list-manage.com/subscribe/post-json?u=1a123436baa68728b8cfa3402&amp;id=3e480e888c">
           <div class="submit-field">
-            <input class="input" type="email" name="email" id="emailAddress" placeholder="Email address" />
+            <input class="input" type="email" name="EMAIL" id="emailAddress" placeholder="Email address" />
             <button type="submit" id="signUpButton">Sign up</button>
           </div>
         </form>
+        <span id="subscribe-result"></span>
       </div>
     </span>
 
@@ -48,9 +49,11 @@
         <li><a href="https://www.reddit.com/r/gnosisPM/" target="_blank"><img src="images/reddit.svg" alt="Reddit"></a></li>
       </ul>
     </span>
+    <a href="./assets/PrivacyPolicy.html" class="privacy-policy-link">Privacy Policy</a>
   </div>
-  <script src="./js/form.js"></script>
 
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="./js/form.js"></script>
 </body>
 
 </html>

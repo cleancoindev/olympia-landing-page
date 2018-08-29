@@ -24,5 +24,8 @@
   "devDependencies": {
     "cssnano": "^4.1.0",
     "parcel-bundler": "^1.9.7"
+  },
+  "dependencies": {
+    "fetch-jsonp": "^1.1.3"
   }
 }

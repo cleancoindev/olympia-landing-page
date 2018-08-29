@@ -1,56 +1,46 @@
-const showError = text => {
-  const container = document.getElementsByClassName('signup-container')
-  const prevMessage = document.getElementsByClassName('error-message')[0]
-  if (prevMessage) {
-    prevMessage.parentNode.removeChild(prevMessage)
+$(document).ready(function() {
+  ajaxMailChimpForm($('#subscribe-form'), $('#subscribe-result'))
+
+  function ajaxMailChimpForm($form, $resultElement) {
+    $form.submit(function(e) {
+      e.preventDefault()
+
+      submitSubscribeForm($form, $resultElement)
+    })
   }
 
-  const errorMessage = document.createElement('span')
+  // Submit the form with an ajax/jsonp request.
+  // Based on http://stackoverflow.com/a/15120409/215821
+  function submitSubscribeForm($form, $resultElement) {
+    $.ajax({
+      type: 'GET',
+      url: $form.attr('action'),
+      data: $form.serialize(),
+      cache: false,
+      dataType: 'jsonp',
+      jsonp: 'c', // trigger MailChimp to return a JSONP response
+      contentType: 'application/json; charset=utf-8',
 
-  errorMessage.innerText = text
-  errorMessage.className = 'error-message'
+      error: function(error) {
+        // According to jquery docs, this is never called for cross-domain JSONP requests
+      },
 
-  container[0].appendChild(errorMessage)
-}
+      success: function(data) {
+        if (data.result != 'success') {
+          var message = data.msg || 'Sorry. Unable to subscribe. Please try again later.'
+          $resultElement.css('color', 'red')
 
-const showSuccess = text => {
-  const container = document.getElementsByClassName('signup-container')
-  const prevMessage = document.getElementsByClassName('signup-success')[0]
-  if (prevMessage) {
-    prevMessage.parentNode.removeChild(prevMessage)
+          if (data.msg && data.msg.indexOf('already subscribed') >= 0) {
+            message = "You're already subscribed. Thank you."
+            $resultElement.css('color', 'red')
+          }
+
+          $resultElement.html(message)
+        } else {
+          $resultElement.css('color', 'greenyellow')
+          $resultElement.html('Thank you!<br>You must confirm the subscription in your inbox.')
+        }
+      },
+    })
   }
-
-  const successMessage = document.createElement('span')
-
-  successMessage.innerText = text
-  successMessage.className = 'signup-success'
-
-  container[0].appendChild(successMessage)
-}
-
-subscribe = _ => {
-  const API_URL = 'https://us13.api.mailchimp.com/3.0/lists/a695408992/members/'
-  const API_KEY = '7aa9a2934867fc0b60d9e988b91c9a55-us13'
-  const email_address = document.getElementById('emailAddress').value
-
-  fetch(API_URL, {
-    method: 'POST',
-    credentials: 'include',
-    headers: new Headers({
-      Authorization: `Basic ${Buffer.from(`apikey:${API_KEY}`).toString('base64')}`,
-    }),
-    body: JSON.stringify({
-      email_address,
-      status: 'subscribed',
-    }),
-  }).then(
-    () => {
-      showSuccess('Please check your email for subscription confirmation.')
-    },
-    () => {
-      showError('Something went wrong. Please try again later.')
-    },
-  )
-
-  return false
-}
+})
